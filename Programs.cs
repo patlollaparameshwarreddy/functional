@@ -57,9 +57,7 @@ namespace Fellowship
                         break;
                     case 4:
                         PowerOf2 power = new PowerOf2();
-                        Console.WriteLine("enter the power of 2");
-                        int pow = Convert.ToInt32(args[0]);
-                        power.PowersOf2(pow);
+                        power.PowersOf2();
                         break;
                     case 5:
                         HarmonicNumbers harmonic = new HarmonicNumbers();

@@ -15,9 +15,11 @@ namespace Fellowship
         /// <summary>
         /// this is used taking the used input and calculating the power of 2
         /// </summary>
-        /// <param name="power">the value power is taking from the user</param>
-        public void PowersOf2(int power)
+        public void PowersOf2()
         {
+            Console.WriteLine("enter powers of 2");
+            int power = Convert.ToInt32(Console.ReadLine());
+            ////if condition is used to check whether the given number is greater than 0
             if (power >= 0)
             {
                 ////this for loop is used for calculating the powers of 2 fromo 0 to the entered power value
