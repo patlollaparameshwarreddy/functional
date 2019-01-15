@@ -19,7 +19,15 @@ namespace Fellowship
         {
             Console.WriteLine("enter the number of elements");
             int n = Utility.GetInt();
-            int[] array = new int[n];
+            int[] array = null;
+            if (n > 0)
+            {
+                 array = new int[n];
+            }
+            else
+            {
+                Console.WriteLine("enter the number greater than zero");
+            }
 
             ////taking the array elements from console
             Console.WriteLine("enter array elements");
@@ -30,6 +38,7 @@ namespace Fellowship
             }
 
             int sum = 0;
+            ////this nested for loop is used to fetch the elements distinctly
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < n - 1; j++)

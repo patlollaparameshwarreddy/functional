@@ -33,6 +33,7 @@ namespace Fellowship
             for (int i = 0; i < times; i++)
             {
                 int cash = stake;
+                ////while loop is used to check whether the cash is greater than zero and less than goal
                 while (cash > 0 && cash < goal)
                 {
                     if (random.Next(0, 2) < 0.5)
@@ -45,6 +46,7 @@ namespace Fellowship
                     }
                 }
 
+                ////this condition is used to whether goal is reached or not
                 if (cash == goal)
                 {
                     wins++;

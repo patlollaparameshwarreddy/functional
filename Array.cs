@@ -23,15 +23,23 @@ namespace Fellowship
             ////enter the size of coloumn
             Console.WriteLine("enter column value");
             int column = Utility.GetInt();
-            string[,] a = new string[row, column];
-            Console.WriteLine("enter array elementa");
-            ////this is used for storing array elements 
-            for (int i = 0; i <= row - 1; i++)
+            string[,] a = null;
+            if (row >= 0 && column >= 0)
             {
-                for (int j = 0; j <= column - 1; j++)
+                 a = new string[row, column];
+                Console.WriteLine("enter array elementa");
+                ////this is used for storing array elements 
+                for (int i = 0; i <= row - 1; i++)
                 {
-                    a[i, j] = Console.ReadLine();
+                    for (int j = 0; j <= column - 1; j++)
+                    {
+                        a[i, j] = Console.ReadLine();
+                    }
                 }
+            }
+            else
+            {
+                Console.WriteLine("enter the proper row and column values");
             }
             ////this loop is used for displaying array elements
             for (int i = 0; i <= row - 1; i++)

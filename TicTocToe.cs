@@ -145,6 +145,7 @@ namespace Fellowship
         /// <returns> it returns the boolean value to stop the game</returns>
         public bool Winner()
         {
+            ////this condition is used to check whether the user wined or the computer
             if ((this.game[0, 0] == 'X' && this.game[0, 1] == 'X' && this.game[0, 2] == 'X') ||
                (this.game[1, 0] == 'X' && this.game[1, 1] == 'X' && this.game[1, 2] == 'X') ||
                (this.game[2, 0] == 'X' && this.game[2, 1] == 'X' && this.game[2, 2] == 'X') ||
