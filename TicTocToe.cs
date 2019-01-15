@@ -99,15 +99,23 @@ namespace Fellowship
             int row = Utility.GetInt();
             Console.WriteLine("enter coloumn value");
              int column = Utility.GetInt();
-            if (this.game[row, column] == '-')
+            if (row > 0 && column > 0 && row <= 2 && column <= 2)
             {
-                this.game[row, column] = this.playerSymbol;
-                this.count++;
-                return;
+                if (this.game[row, column] == '-')
+                {
+                    this.game[row, column] = this.playerSymbol;
+                    this.count++;
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("enter proper row and coloumn value");
+                    this.Player();
+                }
             }
             else
             {
-                Console.WriteLine("enter proper row and coloumn value");
+                Console.WriteLine("enter proper row and column");
                 this.Player();
             }
         }

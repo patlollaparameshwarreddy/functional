@@ -15,11 +15,12 @@ namespace Fellowship
         /// <summary>
         /// Add3s the numbers to zero.
         /// </summary>
-        public void Add3NumbersToZero()
+        public void Add3NumbersToZero() 
         {
             Console.WriteLine("enter the number of elements");
             int n = Utility.GetInt();
             int[] array = new int[n];
+
             ////taking the array elements from console
             Console.WriteLine("enter array elements");
             ////this loop is used for storing the array elements
