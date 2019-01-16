@@ -17,17 +17,24 @@ namespace Fellowship
         /// </summary>
         public void Harmonic()
         {
-            Console.WriteLine("enter to find n th harmonic number");
-            int n = Utility.GetInt();
-            float result = 0;
-            ////this loop is used for finding the n th harmonic number
-            for (int i = 1; i <= n; i++)
+            try
             {
-                result = result + (float)(1.0 / i);
-            }
+                Console.WriteLine("enter to find n th harmonic number");
+                int n = Utility.GetInt();
+                float result = 0;
+                ////this loop is used for finding the n th harmonic number
+                for (int i = 1; i <= n; i++)
+                {
+                    result = result + (float)(1.0 / i);
+                }
 
-            Console.WriteLine("n th harmonic number is " + result);
-            Console.ReadLine();
+                Console.WriteLine("n th harmonic number is " + result);
+                Console.ReadLine();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }

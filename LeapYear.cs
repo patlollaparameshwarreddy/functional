@@ -17,26 +17,33 @@ namespace Fellowship
         /// </summary>
         public void Leapyear()
         {
-            Console.WriteLine("enter year with four digits");
-                string year = Console.ReadLine();
-            if (year.Length == 4)
+            try
             {
-                int num = Convert.ToInt32(year);
-                if (num % 4 == 0)
+                Console.WriteLine("enter year with four digits");
+                string year = Console.ReadLine();
+                if (year.Length == 4)
                 {
-                    Console.WriteLine(num + " is a leap year");
+                    int num = Convert.ToInt32(year);
+                    if (num % 4 == 0)
+                    {
+                        Console.WriteLine(num + " is a leap year");
+                    }
+                    else
+                    {
+                        Console.WriteLine(num + " is not a leap year");
+                    }
                 }
                 else
                 {
-                    Console.WriteLine(num + " is not a leap year");
+                    Console.WriteLine("Year should be atleast ");
                 }
-            }
-            else
-            {
-                Console.WriteLine("enter year properly");
-            }
 
-            Console.ReadLine();
+                Console.ReadLine();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

@@ -17,22 +17,29 @@ namespace Fellowship
         /// </summary>
         public void ReplaceString1()
         {
-            Console.WriteLine("enter name to replace");
-            //// take the string input from user
-            string name = Console.ReadLine();
-            string message = "Hello <<UserName>>, How are you?";
-            string fullMessage = null;
-            if (string.IsNullOrEmpty(name) || string.IsNullOrWhiteSpace(name))
+            try
             {
-                Console.WriteLine("enter proper name");
+                Console.WriteLine("enter name to replace");
+                //// take the string input from user
+                string name = Console.ReadLine();
+                string message = "Hello <<UserName>>, How are you?";
+                string fullMessage = null;
+                if (string.IsNullOrEmpty(name) || string.IsNullOrWhiteSpace(name))
+                {
+                    Console.WriteLine("enter proper name");
+                }
+                else
+                {
+                    fullMessage = message.Replace("<<UserName>>", name);
+                }
+                ////it will print the string that is replaced with "<<UserName>>"
+                Console.WriteLine(fullMessage);
+                Console.ReadLine();
             }
-            else
+            catch (Exception e)
             {
-                fullMessage = message.Replace("<<UserName>>", name);
+                Console.WriteLine(e.Message);
             }
-            ////it will print the string that is replaced with "<<UserName>>"
-            Console.WriteLine(fullMessage);
-            Console.ReadLine();
         }
     }
 }

@@ -17,37 +17,44 @@ namespace Fellowship
         /// </summary>
         public void Flip()
         {
-            ////taking number of times to flip a coin
-            Console.WriteLine("enter number of times to flip");
-            int times = Convert.ToInt32(Console.ReadLine());
-            Random rd = new Random();
-            int heads = 0;
-            int tails = 0;
-            if (times > 0)
+            try
             {
-                //// for loop to get random number
-                for (int i = 1; i <= times; i++)
+                ////taking number of times to flip a coin
+                Console.WriteLine("enter number of times to flip");
+                int times = Convert.ToInt32(Console.ReadLine());
+                Random rd = new Random();
+                int heads = 0;
+                int tails = 0;
+                if (times > 0)
                 {
-                    int value = rd.Next(1, 3);
-                    if (value < 1.5)
+                    //// for loop to get random number
+                    for (int i = 1; i <= times; i++)
                     {
-                        tails++;
+                        int value = rd.Next(1, 3);
+                        if (value < 1.5)
+                        {
+                            tails++;
+                        }
+                        else
+                        {
+                            heads++;
+                        }
                     }
-                    else
-                    {
-                        heads++;
-                    }
-                }
 
-                Console.WriteLine(heads);
-                Console.WriteLine(tails);
-                Console.WriteLine("tails percentage is " + ((tails * 100) / times));
-                Console.WriteLine("heads percentage is " + ((heads * 100) / times));
-                Console.ReadLine();
+                    Console.WriteLine(heads);
+                    Console.WriteLine(tails);
+                    Console.WriteLine("tails percentage is " + ((tails * 100) / times));
+                    Console.WriteLine("heads percentage is " + ((heads * 100) / times));
+                    Console.ReadLine();
+                }
+                else
+                {
+                    Console.WriteLine("enter number greater than 0");
+                }
             }
-            else
+            catch (Exception e)
             {
-                Console.WriteLine("enter number greater than 0");
+                Console.WriteLine(e.Message);
             }
         }
     }

@@ -45,18 +45,25 @@ namespace Fellowship
         /// <param name="currentIndex">Index of the current.</param>
         private static void Permutation(char[] words, int currentIndex)
         {
-            if (currentIndex == words.Length - 1)
+            try
             {
-                string values = new string(words);
-                Console.WriteLine(values);
-            }
+                if (currentIndex == words.Length - 1)
+                {
+                    string values = new string(words);
+                    Console.WriteLine(values);
+                }
 
-            for (int i = currentIndex; i < words.Length; i++)
+                for (int i = currentIndex; i < words.Length; i++)
+                {
+                    Swap(words, currentIndex, i);
+                    Permutation(words, currentIndex + 1);
+                    Swap(words, currentIndex, i);
+                }
+            }
+            catch (Exception e)
             {
-                Swap(words, currentIndex, i);
-                Permutation(words, currentIndex + 1);
-                Swap(words, currentIndex, i);
-            } 
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }

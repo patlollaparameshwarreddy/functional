@@ -17,36 +17,43 @@ namespace Fellowship
         /// </summary>
         public void Prime_Factors()
         {
-            Console.WriteLine("enter number to find prime factors");
-            int number = Utility.GetInt();
-            for (int i = 1; i <= number; i++)
+            try
             {
-                int count = 0;
-                for (int j = 1; j <= i; j++)
+                Console.WriteLine("enter number to find prime factors");
+                int number = Utility.GetInt();
+                for (int i = 1; i <= number; i++)
                 {
-                    if (i % j == 0)
+                    int count = 0;
+                    for (int j = 1; j <= i; j++)
                     {
-                        count++;
-                    }
-                }
-
-                if (count == 2)
-                {
-                    int validation = 1;
-                    while (number % i == 0)
-                    {
-                        if (validation == 1)
+                        if (i % j == 0)
                         {
-                            Console.WriteLine(i);
-                            validation++;
+                            count++;
                         }
+                    }
 
-                        number = number / i;
+                    if (count == 2)
+                    {
+                        int validation = 1;
+                        while (number % i == 0)
+                        {
+                            if (validation == 1)
+                            {
+                                Console.WriteLine(i);
+                                validation++;
+                            }
+
+                            number = number / i;
+                        }
                     }
                 }
-            }
 
-            Console.ReadLine();
+                Console.ReadLine();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }
